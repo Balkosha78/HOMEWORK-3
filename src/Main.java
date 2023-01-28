@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 public class Main {
     public static void main(String[] args) {
         task1();
@@ -54,7 +56,8 @@ public class Main {
     public static void task4() {
         System.out.println("Задача 4"); // Код задачи 4
         int machinePerformance = 16;
-        int machinePerformanceReference = (machinePerformance / 2); // производительность за мин.
+        byte minutesByCondition = 2;
+        int machinePerformanceReference = (machinePerformance / minutesByCondition); // производительность за мин.
         byte minutes = 20;
         int machinePerformanceMinut = (machinePerformanceReference * minutes); // за 20 мин.
         System.out.println("За " + minutes + " минут машина произвела " + machinePerformanceMinut + " штук бутылок");
@@ -110,14 +113,15 @@ public class Main {
         short weightPerDayMax = 500;
         int howManyDaysMax = (needLoseWeightGramm / weightPerDayMax); // расчет дней макс.
         System.out.println("Количество дней " + howManyDaysMax + " при потере веса 500гр. в день");
-        int howManyDaysAverage = (howManyDaysMin + howManyDaysMax) / 2; //расчет средний
-        System.out.println("Количество дней на похудение в среднем = " + howManyDaysAverage);
+        float mediumHeight = (weightPerDayMin + weightPerDayMax) / 2f;
+        float howManyDaysAverage = (needLoseWeightGramm / mediumHeight); //расчет средний
+        System.out.printf(Locale.US, "Количество дней на похудение в среднем = %.2f%n", howManyDaysAverage);
     }
     public static void task8() {
         System.out.println("Задача 8"); //Код задачи 8
-        int salaryMasha = 67760;
-        int salaryDenis = 83690;
-        int salaryKristina = 76230;
+        int salaryMasha = 67_760;
+        int salaryDenis = 83_690;
+        int salaryKristina = 76_230;
         double salaryIncrease = 10 / 100D;
         double indexedSalaryMasha = (salaryMasha + salaryMasha * salaryIncrease); //ЗП Маши проиндексированная на 10%
         double indexedSalaryDenis = (salaryDenis + salaryDenis * salaryIncrease);
