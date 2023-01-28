@@ -6,6 +6,8 @@ public class Main {
         task4();
         task5();
         task6();
+        task7();
+        task8();
     }
     public static void task1() {
         System.out.println("Задача 1"); // Код задачи 1
@@ -97,5 +99,40 @@ public class Main {
         System.out.println("Общий вес спортивного завтрака = " + totalCoctailWeight + " грамм.");
         float totalCoctailWeightKG = (totalCoctailWeight / 1000f); // в кг.
         System.out.println("Общий вес спортивного завтрака = " + totalCoctailWeightKG + " кг.");
+    }
+    public static void task7() {
+        System.out.println("Задача 7"); // Код задачи 7
+        byte needLoseWeight = 7;
+        int needLoseWeightGramm = (needLoseWeight * 1000); // перевод в граммы
+        short weightPerDayMin = 250;
+        int howManyDaysMin = (needLoseWeightGramm / weightPerDayMin); //расчет дней мин.
+        System.out.println("Количество дней " + howManyDaysMin + " при потере веса 250гр. в день");
+        short weightPerDayMax = 500;
+        int howManyDaysMax = (needLoseWeightGramm / weightPerDayMax); // расчет дней макс.
+        System.out.println("Количество дней " + howManyDaysMax + " при потере веса 500гр. в день");
+        int howManyDaysAverage = (howManyDaysMin + howManyDaysMax) / 2; //расчет средний
+        System.out.println("Количество дней на похудение в среднем = " + howManyDaysAverage);
+    }
+    public static void task8() {
+        System.out.println("Задача 8"); //Код задачи 8
+        int salaryMasha = 67760;
+        int salaryDenis = 83690;
+        int salaryKristina = 76230;
+        double salaryIncrease = 10 / 100D;
+        double indexedSalaryMasha = (salaryMasha + salaryMasha * salaryIncrease); //ЗП Маши проиндексированная на 10%
+        double indexedSalaryDenis = (salaryDenis + salaryDenis * salaryIncrease);
+        double indexedSalaryKristina = (salaryKristina + salaryKristina * salaryIncrease);
+        int annualSalaryMasha = (salaryMasha * 12); // ЗП Маши за год до повышения
+        int annualSalaryDenis = (salaryDenis * 12);
+        int annualSalaryKristina = (salaryKristina * 12);
+        double annualSalaryMashaNew = (indexedSalaryMasha * 12); //ЗП Маши за год проиндексированная
+        double annualSalaryDenisNew = (indexedSalaryDenis * 12);
+        double annualSalaryKristinaNew = (indexedSalaryKristina * 12);
+        double salaryDifferenceMasha = (annualSalaryMashaNew - annualSalaryMasha); // Разница между старой и новой ЗП за год
+        System.out.println("Маша теперь получает " + indexedSalaryMasha + " руб. Годовой доход вырос на " + salaryDifferenceMasha);
+        double salaryDifferenceDenis = (annualSalaryDenisNew - annualSalaryDenis);
+        System.out.println("Денис теперь получает " + indexedSalaryDenis + " руб. Годовой доход вырос на " + salaryDifferenceDenis);
+        double salaryDifferenceKristina = (annualSalaryKristinaNew - annualSalaryKristina);
+        System.out.println("Кристина теперь получает " + indexedSalaryKristina + " руб. Годовой доход вырос на " + salaryDifferenceKristina);
     }
 }
